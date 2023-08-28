@@ -15,6 +15,14 @@ contains = input("Enter the type of password you want: ")
 
 import random
 import string
+import os
+
+api_key = os.environ.get('API_KEY')
+
+if api_key:
+    print(f"API Key: {api_key}")
+else:
+    print("API Key is not set.")
 
 #Password-Generator of your choice
 if contains == "1" or contains == "2" or contains == "3" or contains == "4" or contains == "5" or contains == "6" or contains == "7":
