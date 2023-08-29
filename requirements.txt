@@ -1,2 +1,0 @@
-package-name>=3.11.1
-another-package<3.12.0
