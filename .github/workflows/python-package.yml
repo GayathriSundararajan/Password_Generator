@@ -35,7 +35,7 @@ jobs:
         with:
           name: project-artifacts
           path: |
-            # Specify paths to files or directories you want to include as artifacts
-            # For example: dist/, logs/, etc.
+            path/to/artifact/directory  # Update this path
+            path/to/another/directory  # Add more paths if needed
 
   # Add more jobs for deployment or other tasks if needed
