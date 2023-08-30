@@ -1,0 +1,41 @@
+name: Python CI/CD with Artifacts
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11.4
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          
+
+      # Add more steps here for building your project
+
+      - name: Run Tests
+        run: |
+          # Add your test commands here
+
+      - name: Archive Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: project-artifacts
+          path: |
+            # Specify paths to files or directories you want to include as artifacts
+            # For example: dist/, logs/, etc.
+
+  # Add more jobs for deployment or other tasks if needed
