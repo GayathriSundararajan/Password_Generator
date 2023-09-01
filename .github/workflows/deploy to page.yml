@@ -16,7 +16,7 @@ jobs:
       - name: Set up Ruby
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: 3.2.2  # Adjust the Ruby version if needed
+          ruby-version: 3.x  # Adjust the Ruby version if needed
 
       - name: Install Jekyll and Dependencies
         run: |
