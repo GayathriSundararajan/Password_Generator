@@ -32,7 +32,14 @@ jobs:
             # Add commands to build and deploy your project here
             curl -H "Authorization: Bearer $API_KEY" https://api.example.com/deploy
            
-         
+      - name: Archive Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: project-artifacts
+          path: |
+            path/to/artifact/directory  # Update this path
+            path/to/another/directory  # Add more paths if needed
+
 
     
 
