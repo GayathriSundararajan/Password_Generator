@@ -1,0 +1,48 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main  # Adjust this branch name as needed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set Up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11.4  # Adjust the Python version as needed
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Run Tests
+        run: |
+          # Add commands to run your tests here
+          # For example: python -m pytest
+
+      - name: Build and Deploy
+        run: |
+          # Add commands to build and deploy your project here
+          # For example: python build.py
+
+      - name: Deploy to Production
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: |
+          # Add commands to deploy your project to production here
+          # For example: curl -H "Authorization: Bearer $API_KEY" https://api.example.com/deploy
+
+      - name: Archive Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: project-artifacts
+          path: |
+            path/to/artifact/directory  # Update this path
+            path/to/another/directory  # Add more paths if needed
