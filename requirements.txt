@@ -1,2 +1,0 @@
-package-name==3.11.4
-another-package>=4.0.0
